@@ -1,0 +1,105 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: #0f0f0f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .calculator {
+      background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+      border-radius: 25px;
+      padding: 30px;
+      width: 100%;
+      max-width: 500px; /* ✅ Wider calculator */
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .display {
+      background: #000;
+      border-radius: 20px;
+      padding: 25px;
+      text-align: right;
+      color: white;
+      margin-bottom: 25px;
+      font-size: 48px;
+      min-height: 90px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .previous-operand {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 18px;
+      text-align: right;
+      margin-bottom: 5px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 22px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      color: white;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .number {
+      background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
+    }
+
+    .operator {
+      background: linear-gradient(145deg, #ff9500, #ff8000);
+      font-weight: bold;
+    }
+
+    .function {
+      background: linear-gradient(145deg, #404040, #4a4a4a);
+    }
+
+    .equals {
+      background: linear-gradient(145deg, #ff9500, #ff8000);
+      font-weight: bold;
+    }
+
+    .zero {
+      grid-column: span 2; /* ✅ "0" takes 2 slots */
+    }
+
+    /* Make bottom row (0, ., =) fit in one line perfectly */
+    .bottom-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .calculator {
+        max-width: 95%;
+      }
+      button {
+        padding: 18px;
+        font-size: 20px;
+      }
+    }
